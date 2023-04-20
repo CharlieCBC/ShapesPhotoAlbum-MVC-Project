@@ -10,6 +10,7 @@ import javax.swing.*;
 import model.Model;
 import model.Snapshot;
 import model.IShape;
+
 public class SnapshotAlbumView extends JFrame {
   private final Model model;
   private final DrawingPanel drawingPanel;
@@ -61,6 +62,7 @@ public class SnapshotAlbumView extends JFrame {
     displaySnapshot(0);
     setVisible(true);
   }
+
   private void displaySnapshot(int index) {
     if (index >= 0 && index < model.getSnapshotAlbum().getSnapshots().size()) {
       currentIndex = index;
@@ -73,6 +75,7 @@ public class SnapshotAlbumView extends JFrame {
       repaint();
     }
   }
+
   private void previousSnapshot() {
     if (currentIndex > 0) {
       displaySnapshot(currentIndex - 1);
@@ -80,6 +83,7 @@ public class SnapshotAlbumView extends JFrame {
       JOptionPane.showMessageDialog(this, "No previous snapshot.");
     }
   }
+
   private void nextSnapshot() {
     if (currentIndex < model.getSnapshotAlbum().getSnapshots().size() - 1) {
       displaySnapshot(currentIndex + 1);
@@ -87,6 +91,7 @@ public class SnapshotAlbumView extends JFrame {
       JOptionPane.showMessageDialog(this, "No further snapshots.");
     }
   }
+
   private void jumpToSnapshot(int index) {
     if (index >= 0 && index < model.getSnapshotAlbum().getSnapshots().size()) {
       displaySnapshot(index);
@@ -95,7 +100,7 @@ public class SnapshotAlbumView extends JFrame {
     }
   }
 
-  static class DrawingPanel extends JPanel {
+  private static class DrawingPanel extends JPanel {
     private Snapshot snapshot;
 
     public DrawingPanel() {
