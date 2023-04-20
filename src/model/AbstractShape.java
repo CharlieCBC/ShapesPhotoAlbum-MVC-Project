@@ -1,6 +1,8 @@
 package model;
 
+import java.awt.Color;
 import java.awt.Point;
+import java.awt.Graphics;
 
 /**
  * the abstract class for shapes.
@@ -123,5 +125,18 @@ public abstract class AbstractShape implements IShape {
   @Override
   public void move(double x, double y) {
     point.setLocation(x, y);
+  }
+
+  @Override
+  public void draw(Graphics g) {
+    g.setColor(colour.toAWTColor());
+    g.fillRect((int) point.getX(), (int) point.getY(), (int) width, (int) height);
+  }
+
+  @Override
+  public String toSVG() {
+    Color color = getColour().toAWTColor();
+    String rgbColor = "rgb(" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + ")";
+    return "<rect x=\"" + getPoint().getX() + "\" y=\"" + getPoint().getY() + "\" width=\"" + width + "\" height=\"" + height + "\" fill=\"" + rgbColor + "\" stroke=\"" + rgbColor +"\" />";
   }
 }

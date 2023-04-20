@@ -144,6 +144,27 @@ public class Model implements IModel{
   }
 
   /**
+   * Gets the snapshot album.
+   *
+   * @return the snapshot album.
+   */
+  @Override
+  public SnapshotAlbum getSnapshotAlbum() {
+    return snapshotAlbum;
+  }
+
+  /**
+   * gets the snapshot at the given index.
+   *
+   * @param index the index of the snapshot to get.
+   * @return the snapshot at the given index.
+   */
+  @Override
+  public Snapshot getSnapshot(int index) {
+    return snapshotAlbum.getSnapshots().get(index);
+  }
+
+  /**
    * Removes all shapes from the model.
    */
   @Override

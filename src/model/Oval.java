@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Point;
 
 /**
@@ -8,6 +10,8 @@ import java.awt.Point;
 public class Oval extends AbstractShape {
   private double xRadius;
   private double yRadius;
+  private Colour colour;
+  private Point point;
 
   /**
    * the constructor for an oval.
@@ -23,6 +27,8 @@ public class Oval extends AbstractShape {
     super(name, colour, point, xRadius * 2, yRadius * 2);
     this.xRadius = xRadius;
     this.yRadius = yRadius;
+    this.colour = colour;
+    this.point = point;
   }
 
   /**
@@ -56,6 +62,19 @@ public class Oval extends AbstractShape {
       this.yRadius = yRadius;
       setWidthAndHeight(xRadius * 2, yRadius * 2);
     }
+  }
+
+  @Override
+  public void draw(Graphics g) {
+    g.setColor(colour.toAWTColor());
+    g.fillOval((int) point.getX(), (int) point.getY(), (int) xRadius * 2, (int) yRadius * 2);
+  }
+
+  @Override
+  public String toSVG() {
+    Color color = getColour().toAWTColor();
+    String rgbColor = "rgb(" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + ")";
+    return "<rect x=\"" + getPoint().getX() + "\" y=\"" + getPoint().getY() + "\" width=\"" + getXRadius() * 2 + "\" height=\"" + getYRadius() * 2 + "\" fill=\"" + rgbColor + "\" stroke=\"" + rgbColor +"\" />";
   }
 
   @Override

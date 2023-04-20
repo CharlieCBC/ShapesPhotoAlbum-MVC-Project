@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Graphics;
 import java.awt.Point;
 
 /**
@@ -56,4 +57,16 @@ public interface IShape {
    * @param y y coordinate.
    */
   void move(double x, double y);
+
+  /**
+   * draw the shape.
+   * @param g the graphics object.
+   */
+  void draw(Graphics g);
+
+  /**
+   * transform the shape to svg format.
+   * @return the svg format of the shape.
+   */
+  String toSVG();
 }

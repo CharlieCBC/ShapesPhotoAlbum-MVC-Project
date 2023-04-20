@@ -1,6 +1,9 @@
 import java.io.IOException;
 
 import controller.SnapshotAlbumController;
+import model.Model;
+import view.HTMLSnapshotAlbumExporter;
+import view.SnapshotAlbumView;
 
 public class Main {
   public static void main(String[] args) {
@@ -11,6 +14,8 @@ public class Main {
     } catch (IOException e) {
       System.err.println("Error reading command file: " + e.getMessage());
     }
+
+
 //    Model model = new Model();
 //    Controller controller = new Controller(model);
 //
@@ -19,5 +24,16 @@ public class Main {
 //
 //    System.out.println(model.getShapesInfo());
 //    System.out.println(model.getSnapshotOverview());
+
+
+//    Model model = new Model();
+//    // Add some sample data to the model
+//
+//    // Generate HTML content and save it to a file
+//    HTMLSnapshotAlbumExporter exporter = new HTMLSnapshotAlbumExporter();
+//    String htmlContent = exporter.generateHTML(model);
+//    exporter.saveHTMLToFile(htmlContent, "snapshot_album.html");
+//
+//    new SnapshotAlbumView(model);
   }
 }

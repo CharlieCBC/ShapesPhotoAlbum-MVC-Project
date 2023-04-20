@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Color;
+
 /**
  * the colour class that stores rgb values for shapes.
  */
@@ -51,5 +53,13 @@ public class Colour {
     sb.append(getGreen()).append(",");
     sb.append(getBlue());
     return sb.toString();
+  }
+
+  /**
+   * converts the colour to an AWT color.
+   * @return the AWT color.
+   */
+  public Color toAWTColor() {
+    return new Color((int)red, (int)green, (int)blue);
   }
 }

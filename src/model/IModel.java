@@ -90,6 +90,19 @@ public interface IModel {
   void editSnapshotDescription(int index, String description);
 
   /**
+   * Gets the snapshot album.
+   * @return the snapshot album.
+   */
+  SnapshotAlbum getSnapshotAlbum();
+
+  /**
+   * gets the snapshot at the given index.
+   * @param index the index of the snapshot to get.
+   * @return the snapshot at the given index.
+   */
+  Snapshot getSnapshot(int index);
+
+  /**
    * Removes all shapes from the model.
    */
   void reset();

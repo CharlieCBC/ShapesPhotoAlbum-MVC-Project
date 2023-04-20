@@ -15,6 +15,10 @@ public class SnapshotAlbumController {
     model = new Model();
   }
 
+  public Model getModel() {
+    return model;
+  }
+
   public void readCommands(String filename) throws IOException {
     try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
       String line;
