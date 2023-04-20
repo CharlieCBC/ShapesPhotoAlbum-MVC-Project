@@ -1,23 +1,33 @@
 package view;
 
 import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import javax.swing.*;
-import model.Model;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import model.SnapshotAlbumModel;
 import model.Snapshot;
-import model.IShape;
 
-public class SnapshotAlbumView extends JFrame {
-  private final Model model;
+/**
+ * A view that displays a snapshot album.
+ */
+public class SnapshotAlbumView extends JFrame implements ISnapshotAlbumView {
+  private final SnapshotAlbumModel model;
   private final DrawingPanel drawingPanel;
   private int currentIndex;
   private final JLabel snapshotTimestampAndDescription;
 
-  public SnapshotAlbumView(Model model) {
+  /**
+   * Constructs a SnapshotAlbumView.
+   *
+   * @param model the model
+   */
+  public SnapshotAlbumView(SnapshotAlbumModel model) {
     this.model = model;
     this.currentIndex = -1;
     setTitle("Snapshot Album Viewer");
@@ -63,20 +73,29 @@ public class SnapshotAlbumView extends JFrame {
     setVisible(true);
   }
 
-  private void displaySnapshot(int index) {
+  /**
+   * Displays the snapshot at the given index.
+   *
+   * @param index the index of the snapshot to display.
+   */
+  public void displaySnapshot(int index) {
     if (index >= 0 && index < model.getSnapshotAlbum().getSnapshots().size()) {
       currentIndex = index;
       Snapshot snapshot = model.getSnapshotAlbum().getSnapshots().get(index);
       drawingPanel.setSnapshot(snapshot);
 
       // Update the timestamp and description JLabel
-      snapshotTimestampAndDescription.setText(snapshot.getTimeStamp() + ": " + snapshot.getDescription());
+      snapshotTimestampAndDescription
+              .setText(snapshot.getTimeStamp() + ": " + snapshot.getDescription());
 
       repaint();
     }
   }
 
-  private void previousSnapshot() {
+  /**
+   * Displays the previous snapshot.
+   */
+  public void previousSnapshot() {
     if (currentIndex > 0) {
       displaySnapshot(currentIndex - 1);
     } else {
@@ -84,7 +103,10 @@ public class SnapshotAlbumView extends JFrame {
     }
   }
 
-  private void nextSnapshot() {
+  /**
+   * Displays the next snapshot.
+   */
+  public void nextSnapshot() {
     if (currentIndex < model.getSnapshotAlbum().getSnapshots().size() - 1) {
       displaySnapshot(currentIndex + 1);
     } else {
@@ -92,34 +114,16 @@ public class SnapshotAlbumView extends JFrame {
     }
   }
 
-  private void jumpToSnapshot(int index) {
+  /**
+   * Displays the snapshot at the given index.
+   *
+   * @param index the index of the snapshot to display.
+   */
+  public void jumpToSnapshot(int index) {
     if (index >= 0 && index < model.getSnapshotAlbum().getSnapshots().size()) {
       displaySnapshot(index);
     } else {
       JOptionPane.showMessageDialog(this, "No such snapshot.");
-    }
-  }
-
-  private static class DrawingPanel extends JPanel {
-    private Snapshot snapshot;
-
-    public DrawingPanel() {
-      setPreferredSize(new Dimension(400, 300));
-    }
-
-    public void setSnapshot(Snapshot snapshot) {
-      this.snapshot = snapshot;
-      repaint();
-    }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-      super.paintComponent(g);
-      if (snapshot != null) {
-        for (IShape shape : snapshot.getShapes()) {
-          shape.draw(g);
-        }
-      }
     }
   }
 }

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * the SnapshotAlbum takes snapshots and puts multiple snapshots together.
  */
-public class SnapshotAlbum {
+public class SnapshotAlbum implements ISnapshotAlbum {
   private final ShapeAlbum shapeAlbum;
   private final List<Snapshot> snapshots;
   private final List<LocalDateTime> snapshotIds;

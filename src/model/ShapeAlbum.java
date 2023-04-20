@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * shapeAlbum puts multiple shapes in an array list.
  */
-public class ShapeAlbum {
+public class ShapeAlbum implements IShapeAlbum {
   private final List<IShape> shapes;
 
   /**

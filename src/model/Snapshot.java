@@ -8,11 +8,18 @@ import java.util.List;
 /**
  * snapshot class stores shapes' snapshot info.
  */
-public class Snapshot {
+public class Snapshot implements ISnapshot {
   private String description;
   private final List<IShape> shapes;
   private final LocalDateTime timeStamp;
 
+  /**
+   * the constructor that initializes the description, shapes, and time stamp.
+   * @param description the description of the snapshot.
+   * @param album the album containing the shapes.
+   * @param timeStamp the time stamp of the snapshot.
+   * @throws IllegalArgumentException if the description is null.
+   */
   public Snapshot(String description, ShapeAlbum album, LocalDateTime timeStamp)
           throws IllegalArgumentException {
     boolean invalidDescription = (description == null || description.equals("null"));

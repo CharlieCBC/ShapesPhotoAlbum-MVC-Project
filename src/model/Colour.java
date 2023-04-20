@@ -6,9 +6,9 @@ import java.awt.Color;
  * the colour class that stores rgb values for shapes.
  */
 public class Colour {
-  private final float red;
-  private final float green;
-  private final float blue;
+  private final int red;
+  private final int green;
+  private final int blue;
 
   /**
    * the constructor that sets the rgb values.
@@ -16,7 +16,7 @@ public class Colour {
    * @param green green value.
    * @param blue blue value.
    */
-  public Colour(float red, float green, float blue) {
+  public Colour(int red, int green, int blue) {
     this.red = red;
     this.green = green;
     this.blue = blue;
@@ -26,7 +26,7 @@ public class Colour {
    * the getter for red value.
    * @return red value.
    */
-  public float getRed() {
+  public int getRed() {
     return red;
   }
 
@@ -34,7 +34,7 @@ public class Colour {
    * the getter for green value.
    * @return green value.
    */
-  public float getGreen() {
+  public int getGreen() {
     return green;
   }
 
@@ -42,7 +42,7 @@ public class Colour {
    * the getter for blue value.
    * @return blue value.
    */
-  public float getBlue() {
+  public int getBlue() {
     return blue;
   }
 
@@ -60,6 +60,6 @@ public class Colour {
    * @return the AWT color.
    */
   public Color toAWTColor() {
-    return new Color((int)red, (int)green, (int)blue);
+    return new Color(red, green, blue);
   }
 }

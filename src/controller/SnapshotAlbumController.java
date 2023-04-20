@@ -1,24 +1,23 @@
 package controller;
 
-import model.Model;
-import model.Colour;
-
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import model.Colour;
+import model.SnapshotAlbumModel;
 
 /**
  * the controller for the snapshot album.
  */
-public class SnapshotAlbumController {
-  private Model model;
+public class SnapshotAlbumController implements ISnapshotAlbumController {
+  private SnapshotAlbumModel model;
 
   /**
    * the constructor for the controller.
    */
   public SnapshotAlbumController() {
-    model = new Model();
+    model = new SnapshotAlbumModel();
   }
 
   /**
@@ -26,7 +25,7 @@ public class SnapshotAlbumController {
    *
    * @return the model.
    */
-  public Model getModel() {
+  public SnapshotAlbumModel getModel() {
     return model;
   }
 
@@ -48,9 +47,9 @@ public class SnapshotAlbumController {
           double y = Double.parseDouble(tokens[4]);
           double width = Double.parseDouble(tokens[5]);
           double height = Double.parseDouble(tokens[6]);
-          float red = Float.parseFloat(tokens[7]);
-          float green = Float.parseFloat(tokens[8]);
-          float blue = Float.parseFloat(tokens[9]);
+          int red = Integer.parseInt(tokens[7]);
+          int green = Integer.parseInt(tokens[8]);
+          int blue = Integer.parseInt(tokens[9]);
           Point point = new Point((int) x, (int) y);
           Colour colour = new Colour(red, green, blue);
           model.addShape(name, type, colour, point, width, height);
@@ -75,9 +74,9 @@ public class SnapshotAlbumController {
           model.resizeShape(name, width, height);
         } else if (tokens[0].equalsIgnoreCase("color")) {
           String name = tokens[1];
-          float red = Float.parseFloat(tokens[2]);
-          float green = Float.parseFloat(tokens[3]);
-          float blue = Float.parseFloat(tokens[4]);
+          int red = Integer.parseInt(tokens[2]);
+          int green = Integer.parseInt(tokens[3]);
+          int blue = Integer.parseInt(tokens[4]);
           Colour colour = new Colour(red, green, blue);
           model.changeShapeColor(name, colour);
         } else if (tokens[0].equalsIgnoreCase("remove")) {

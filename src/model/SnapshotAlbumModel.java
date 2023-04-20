@@ -6,14 +6,14 @@ import java.util.List;
 /**
  * A class representing a model that manages shapes and snapshots of those shapes.
  */
-public class Model implements IModel{
+public class SnapshotAlbumModel implements ISnapshotAlbumModel {
   private ShapeAlbum shapeAlbum;
   private SnapshotAlbum snapshotAlbum;
 
   /**
    * Constructs a new model with an empty shape album and snapshot album.
    */
-  public Model() {
+  public SnapshotAlbumModel() {
     shapeAlbum = new ShapeAlbum();
     snapshotAlbum = new SnapshotAlbum(shapeAlbum);
   }
@@ -30,7 +30,8 @@ public class Model implements IModel{
    * @throws IllegalArgumentException if an invalid shape type is provided.
    */
   @Override
-  public void addShape(String name, String type, Colour colour, Point point, double width, double height) {
+  public void addShape(
+          String name, String type, Colour colour, Point point, double width, double height) {
     IShape shape;
     if (type.equalsIgnoreCase("rectangle")) {
       shape = new Rectangle(name, colour, point, width, height);

@@ -5,7 +5,7 @@ import java.awt.Point;
 /**
  * An interface representing a model that manages shapes and snapshots of those shapes.
  */
-public interface IModel {
+public interface ISnapshotAlbumModel {
 
   /**
    * Adds a new shape to the model's list of shapes.
