@@ -74,7 +74,7 @@ public class Oval extends AbstractShape {
   public String toSVG() {
     Color color = getColour().toAWTColor();
     String rgbColor = "rgb(" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + ")";
-    return "<rect x=\"" + getPoint().getX() + "\" y=\"" + getPoint().getY() + "\" width=\"" + getXRadius() * 2 + "\" height=\"" + getYRadius() * 2 + "\" fill=\"" + rgbColor + "\" stroke=\"" + rgbColor +"\" />";
+    return "<ellipse cx=\"" + getPoint().getX() + "\" cy=\"" + getPoint().getY() + "\" rx=\"" + getXRadius() + "\" ry=\"" + getYRadius() + "\" fill=\"" + rgbColor + "\" stroke=\"" + rgbColor +"\" />";
   }
 
   @Override

@@ -1,17 +1,16 @@
 package controller;
 
-import model.Model;
-import model.Colour;
-
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import model.Colour;
+import model.Model;
 
 /**
  * the controller for the snapshot album.
  */
-public class SnapshotAlbumController {
+public class SnapshotAlbumController implements ISnapshotAlbumController {
   private Model model;
 
   /**

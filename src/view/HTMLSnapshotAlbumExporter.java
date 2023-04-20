@@ -3,21 +3,28 @@ package view;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
-
-import model.Snapshot;
 import model.IShape;
 import model.Model;
+import model.Snapshot;
 
-public class HTMLSnapshotAlbumExporter {
-  public String generateHTML(Model model) {
+/**
+ * A class that generates an HTML file containing a snapshot album.
+ */
+public class HTMLSnapshotAlbumExporter implements IHTMLSnapshotAlbumExporter {
+
+  /**
+   * Generates an HTML file containing a snapshot album.
+   *
+   * @param model the model containing the snapshot album.
+   * @param width the width of the drawing area.
+   * @param height the height of the drawing area.
+   * @return the HTML file as a string.
+   */
+  public String generateHTML(Model model, int width, int height) {
     StringBuilder sb = new StringBuilder();
     sb.append("<!DOCTYPE html>\n<html>\n<head>\n<title>Snapshot Album</title>\n</head>\n<body>\n");
 
     List<Snapshot> snapshots = model.getSnapshotAlbum().getSnapshots();
-
-    // Define the dimensions of the drawing area
-    int width = 1000;
-    int height = 900;
 
     for (int i = 0; i < snapshots.size(); i++) {
       Snapshot snapshot = snapshots.get(i);
@@ -46,6 +53,12 @@ public class HTMLSnapshotAlbumExporter {
     return sb.toString();
   }
 
+  /**
+   * Saves the given HTML string to the given file.
+   *
+   * @param html the HTML string to save.
+   * @param filename the name of the file to save to.
+   */
   public void saveHTMLToFile(String html, String filename) {
     try (FileWriter fileWriter = new FileWriter(filename)) {
       fileWriter.write(html);
