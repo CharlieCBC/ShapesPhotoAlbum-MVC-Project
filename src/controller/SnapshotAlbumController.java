@@ -8,17 +8,34 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * the controller for the snapshot album.
+ */
 public class SnapshotAlbumController {
   private Model model;
 
+  /**
+   * the constructor for the controller.
+   */
   public SnapshotAlbumController() {
     model = new Model();
   }
 
+  /**
+   * the getter for the model.
+   *
+   * @return the model.
+   */
   public Model getModel() {
     return model;
   }
 
+  /**
+   * reads the commands from a file.
+   *
+   * @param filename the name of the file.
+   * @throws IOException when the file is not found.
+   */
   public void readCommands(String filename) throws IOException {
     try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
       String line;
@@ -71,6 +88,9 @@ public class SnapshotAlbumController {
     }
   }
 
+  /**
+   * prints the snapshots.
+   */
   public void printSnapshots() {
     System.out.println(model.getSnapshotOverview());
   }

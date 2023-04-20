@@ -46,9 +46,6 @@ public class HTMLSnapshotAlbumExporter {
     return sb.toString();
   }
 
-
-
-
   public void saveHTMLToFile(String html, String filename) {
     try (FileWriter fileWriter = new FileWriter(filename)) {
       fileWriter.write(html);
