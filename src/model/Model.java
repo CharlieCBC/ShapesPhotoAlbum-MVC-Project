@@ -30,7 +30,8 @@ public class Model implements IModel{
    * @throws IllegalArgumentException if an invalid shape type is provided.
    */
   @Override
-  public void addShape(String name, String type, Colour colour, Point point, double width, double height) {
+  public void addShape(
+          String name, String type, Colour colour, Point point, double width, double height) {
     IShape shape;
     if (type.equalsIgnoreCase("rectangle")) {
       shape = new Rectangle(name, colour, point, width, height);

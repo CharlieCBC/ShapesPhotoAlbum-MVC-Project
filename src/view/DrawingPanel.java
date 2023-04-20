@@ -3,8 +3,8 @@ package view;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
-import model.Snapshot;
 import model.IShape;
+import model.Snapshot;
 
 /**
  * A panel that displays a snapshot.

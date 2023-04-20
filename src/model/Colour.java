@@ -60,6 +60,6 @@ public class Colour {
    * @return the AWT color.
    */
   public Color toAWTColor() {
-    return new Color((int)red, (int)green, (int)blue);
+    return new Color((int) red, (int) green, (int) blue);
   }
 }
