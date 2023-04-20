@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * snapshot class stores shapes' snapshot info.
  */
-public class Snapshot {
+public class Snapshot implements ISnapshot {
   private String description;
   private final List<IShape> shapes;
   private final LocalDateTime timeStamp;
