@@ -10,14 +10,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import model.Model;
+import model.SnapshotAlbumModel;
 import model.Snapshot;
 
 /**
  * A view that displays a snapshot album.
  */
 public class SnapshotAlbumView extends JFrame implements ISnapshotAlbumView {
-  private final Model model;
+  private final SnapshotAlbumModel model;
   private final DrawingPanel drawingPanel;
   private int currentIndex;
   private final JLabel snapshotTimestampAndDescription;
@@ -27,7 +27,7 @@ public class SnapshotAlbumView extends JFrame implements ISnapshotAlbumView {
    *
    * @param model the model
    */
-  public SnapshotAlbumView(Model model) {
+  public SnapshotAlbumView(SnapshotAlbumModel model) {
     this.model = model;
     this.currentIndex = -1;
     setTitle("Snapshot Album Viewer");

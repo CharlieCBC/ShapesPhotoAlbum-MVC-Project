@@ -1,6 +1,6 @@
 package view;
 
-import model.Model;
+import model.SnapshotAlbumModel;
 
 /**
  * The interface for the HTML snapshot album exporter.
@@ -14,7 +14,7 @@ public interface IHTMLSnapshotAlbumExporter {
    * @param height the height of the drawing area.
    * @return the HTML file as a string.
    */
-  String generateHTML(Model model, int width, int height);
+  String generateHTML(SnapshotAlbumModel model, int width, int height);
 
   /**
    * Saves the given HTML string to the given file.

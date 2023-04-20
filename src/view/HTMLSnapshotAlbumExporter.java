@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import model.IShape;
-import model.Model;
+import model.SnapshotAlbumModel;
 import model.Snapshot;
 
 /**
@@ -20,7 +20,7 @@ public class HTMLSnapshotAlbumExporter implements IHTMLSnapshotAlbumExporter {
    * @param height the height of the drawing area.
    * @return the HTML file as a string.
    */
-  public String generateHTML(Model model, int width, int height) {
+  public String generateHTML(SnapshotAlbumModel model, int width, int height) {
     StringBuilder sb = new StringBuilder();
     sb.append("<!DOCTYPE html>\n<html>\n<head>\n<title>Snapshot Album</title>\n</head>\n<body>\n");
 

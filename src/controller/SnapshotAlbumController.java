@@ -5,19 +5,19 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import model.Colour;
-import model.Model;
+import model.SnapshotAlbumModel;
 
 /**
  * the controller for the snapshot album.
  */
 public class SnapshotAlbumController implements ISnapshotAlbumController {
-  private Model model;
+  private SnapshotAlbumModel model;
 
   /**
    * the constructor for the controller.
    */
   public SnapshotAlbumController() {
-    model = new Model();
+    model = new SnapshotAlbumModel();
   }
 
   /**
@@ -25,7 +25,7 @@ public class SnapshotAlbumController implements ISnapshotAlbumController {
    *
    * @return the model.
    */
-  public Model getModel() {
+  public SnapshotAlbumModel getModel() {
     return model;
   }
 

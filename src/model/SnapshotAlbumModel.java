@@ -6,14 +6,14 @@ import java.util.List;
 /**
  * A class representing a model that manages shapes and snapshots of those shapes.
  */
-public class Model implements IModel{
+public class SnapshotAlbumModel implements ISnapshotAlbumModel {
   private ShapeAlbum shapeAlbum;
   private SnapshotAlbum snapshotAlbum;
 
   /**
    * Constructs a new model with an empty shape album and snapshot album.
    */
-  public Model() {
+  public SnapshotAlbumModel() {
     shapeAlbum = new ShapeAlbum();
     snapshotAlbum = new SnapshotAlbum(shapeAlbum);
   }
