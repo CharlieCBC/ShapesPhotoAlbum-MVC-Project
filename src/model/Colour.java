@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Color;
+import java.util.Objects;
 
 /**
  * the colour class that stores rgb values for shapes.
@@ -61,5 +62,19 @@ public class Colour {
    */
   public Color toAWTColor() {
     return new Color(red, green, blue);
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Colour colour = (Colour) o;
+    return getRed() == colour.getRed() &&
+            getGreen() == colour.getGreen() && getBlue() == colour.getBlue();
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(getRed(), getGreen(), getBlue());
   }
 }
