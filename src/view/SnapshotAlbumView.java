@@ -38,6 +38,7 @@ public class SnapshotAlbumView extends JFrame implements ISnapshotAlbumView {
     panel.add(drawingPanel, BorderLayout.CENTER);
     JPanel controlPanel = new JPanel();
 
+    // Add the buttons and combo box to the control panel.
     JButton previousButton = new JButton("Previous");
     previousButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
@@ -79,6 +80,7 @@ public class SnapshotAlbumView extends JFrame implements ISnapshotAlbumView {
    * @param index the index of the snapshot to display.
    */
   public void displaySnapshot(int index) {
+    // Update the current index and drawing panel.
     if (index >= 0 && index < model.getSnapshotAlbum().getSnapshots().size()) {
       currentIndex = index;
       Snapshot snapshot = model.getSnapshotAlbum().getSnapshots().get(index);
