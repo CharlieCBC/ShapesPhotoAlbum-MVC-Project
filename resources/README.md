@@ -1,7 +1,7 @@
 # CS5004-HW9
 CS5004 HW9
 
-## Refractors:
+## Refactors:
 
 Modified the `Snapshot` class to make each snapshot store a list of shapes at the moment it was taken.
 
