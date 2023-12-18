@@ -1,5 +1,10 @@
-# CS5004-HW9
-CS5004 HW9
+# Shapes Photo Album
+This project is to showcase MVC design and development.
+
+By taking input commands from a txt file, the program can render specified shapes in either an HTML webpage or a Java Swing UI window. 
+The sample commands can be found in the `resources` folder. 
+
+# Legacy Illustrations:
 
 ## Refactors:
 
