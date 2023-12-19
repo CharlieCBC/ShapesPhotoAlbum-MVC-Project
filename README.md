@@ -4,6 +4,8 @@ This project is to showcase MVC design and development.
 By taking input commands from a txt file, the program can render specified shapes in either an HTML webpage or a Java Swing UI window. 
 The sample commands can be found in the `resources` folder. 
 
+*This project was finished in Spring 2023.
+
 # Legacy Illustrations:
 
 ## Refactors:
